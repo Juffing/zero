@@ -7,6 +7,7 @@ import com.zero.backend.model.param.AddCodeParam;
 import com.zero.backend.model.param.UpdateCodeParam;
 import com.zero.backend.service.CodeService;
 import org.springframework.beans.BeanUtils;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -14,6 +15,7 @@ import java.util.List;
 @Service
 public class CodeServiceImpl implements CodeService {
 
+    @Autowired
     private CodeMapper codeMapper;
 
     /**
@@ -21,6 +23,7 @@ public class CodeServiceImpl implements CodeService {
      * @param addCodeParam
      * @return
      */
+    @Override
     public Integer addCode(AddCodeParam addCodeParam) {
         Code code = new Code();
         BeanUtils.copyProperties(addCodeParam, code);
@@ -33,6 +36,7 @@ public class CodeServiceImpl implements CodeService {
      * @param updateCodeParam
      * @return
      */
+    @Override
     public Integer updateCode(UpdateCodeParam updateCodeParam) {
         Code code = new Code();
         BeanUtils.copyProperties(updateCodeParam, code);
@@ -45,6 +49,7 @@ public class CodeServiceImpl implements CodeService {
      * @param id
      * @return
      */
+    @Override
     public Integer deleteCode(Integer id) {
         Integer result = codeMapper.deleteCode(id);
         return result;
@@ -55,6 +60,7 @@ public class CodeServiceImpl implements CodeService {
      * @param id
      * @return
      */
+    @Override
     public Code selectCodeDetail(Integer id) {
         Code code = codeMapper.selectCodeDetail(id);
         return code;
@@ -65,6 +71,7 @@ public class CodeServiceImpl implements CodeService {
      * @param codeData
      * @return
      */
+    @Override
     public List<Code> selectCodeList(CodeData codeData) {
         List<Code> codes = codeMapper.selectCodeList(codeData);
         return codes;

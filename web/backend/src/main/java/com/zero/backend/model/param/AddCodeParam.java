@@ -9,6 +9,6 @@ public class AddCodeParam {
 
     private String name;
 
-    private String desc;
+    private String descp;
 
 }

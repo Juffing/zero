@@ -11,7 +11,7 @@ public class Code {
 
     private String name;
 
-    private String desc;
+    private String descp;
 
     private String codeCover;
 

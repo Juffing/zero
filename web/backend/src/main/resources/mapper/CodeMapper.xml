@@ -5,7 +5,7 @@
 <mapper namespace="com.zero.backend.mapper.CodeMapper">
 
     <insert id="addCode" parameterType="com.zero.backend.entity.Code">
-        insert into vi_code(code, name, desc, code_cover, video_file) value(#{code}, #{name}, #{desc}, #{codeCover}, #{videoFile})
+        insert into vi_code(code, name, descp, code_cover, video_file) value(#{code}, #{name}, #{descp}, #{codeCover}, #{videoFile})
     </insert>
 
     <update id="updateCode" parameterType="com.zero.backend.entity.Code">
@@ -14,8 +14,8 @@
             <if test="name != null and name != ''">
                 name = #{name},
             </if>
-            <if test="desc != null and desc != ''">
-                desc = #{desc},
+            <if test="descp != null and descp != ''">
+                descp = #{descp},
             </if>
             <if test="codeCover != null and codeCover != ''">
                 code_cover = #{codeCover},
@@ -32,7 +32,7 @@
     </delete>
 
     <select id="selectCodeList" parameterType="com.zero.backend.model.data.CodeData" resultType="com.zero.backend.entity.Code">
-        select id, code, name, desc, code_cover as codeCover from vi_code where 1=1
+        select id, code, name, descp, code_cover as codeCover from vi_code where 1=1
         <if test="code != null and code != ''">
             and code = #{code}
         </if>
@@ -42,7 +42,7 @@
     </select>
 
     <select id="selectCodeDetail" parameterType="java.lang.Integer" resultType="com.zero.backend.entity.Code">
-        select id, code, name, desc, code_cover as codeCover, video_file as videoFile from vi_code where id = #{id}
+        select id, code, name, descp, code_cover as codeCover, video_file as videoFile from vi_code where id = #{id}
     </select>
 
 </mapper>
