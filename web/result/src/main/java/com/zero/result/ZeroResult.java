@@ -41,6 +41,14 @@ public class ZeroResult<T> {
         this.data = data;
     }
 
+    public String getInfo() {
+        return info;
+    }
+
+    public void setInfo(String info) {
+        this.info = info;
+    }
+
     public static <T> ZeroResult<T> success(ResultCode resultCode, T data) {
         return new ZeroResult<>(true, resultCode.getCode(), resultCode.getInfo(), data);
     }
