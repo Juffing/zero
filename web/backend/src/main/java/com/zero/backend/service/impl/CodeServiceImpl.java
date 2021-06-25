@@ -9,6 +9,7 @@ import com.zero.backend.service.CodeService;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.util.CollectionUtils;
 
 import java.util.List;
 
@@ -25,6 +26,10 @@ public class CodeServiceImpl implements CodeService {
      */
     @Override
     public Integer addCode(AddCodeParam addCodeParam) {
+        List<Integer> existCode = codeMapper.checkCode(addCodeParam.getCode());
+        if (!CollectionUtils.isEmpty(existCode)) {
+            return null;
+        }
         Code code = new Code();
         BeanUtils.copyProperties(addCodeParam, code);
         Integer result = codeMapper.addCode(code);

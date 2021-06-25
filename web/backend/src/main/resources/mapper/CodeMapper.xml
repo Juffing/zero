@@ -45,4 +45,8 @@
         select id, code, name, descp, code_cover as codeCover, video_file as videoFile from vi_code where id = #{id}
     </select>
 
+    <select id="checkCode" parameterType="java.lang.String" resultType="java.lang.Integer">
+        select id from vi_code where code = #{code} and is_deleted = 0
+    </select>
+
 </mapper>

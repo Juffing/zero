@@ -45,4 +45,11 @@ public interface CodeMapper {
      */
     List<Code> selectCodeList(CodeData codeData);
 
+    /**
+     * 检查是否有相同的番号
+     * @param code
+     * @return
+     */
+    List<Integer> checkCode(String code);
+
 }
