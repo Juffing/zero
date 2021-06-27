@@ -6,7 +6,7 @@ spring:
     driver-class-name: com.mysql.cj.jdbc.Driver
     url: jdbc:mysql://localhost:3306/backend?useUnicode=true&useSSL=false&characterEncoding=utf8&serverTimezone=UTC
     username: root
-    password: root
+    password: 123456
     hikari:
       ## 最小空闲连接数量
       minimum-idle: 2
@@ -26,7 +26,7 @@ spring:
       driver-class-name: com.mysql.cj.jdbc.Driver
       jdbc-url: jdbc:mysql://localhost:3306/backend?useUnicode=true&useSSL=false&characterEncoding=utf8&serverTimezone=UTC
       username: root
-      password: root
+      password: 123456
 
 mybatis:
   mapper-locations: classpath:mapper/*Mapper.xml
